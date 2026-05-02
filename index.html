@@ -39,6 +39,21 @@
       border-bottom: 1px solid var(--line);
     }
 
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .brand-logo {
+      width: 84px;
+      height: 84px;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.16);
+      object-fit: cover;
+    }
+
     h1 {
       margin: 0 0 10px;
       font-size: clamp(34px, 7vw, 64px);
@@ -98,6 +113,20 @@
       list-style: none;
     }
 
+    @media (max-width: 560px) {
+      .brand {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .brand-logo {
+        width: 72px;
+        height: 72px;
+        border-radius: 16px;
+      }
+    }
+
     footer {
       padding: 0 0 32px;
       color: var(--muted);
@@ -107,7 +136,10 @@
 </head>
 <body>
   <header>
-    <h1>Soida Games</h1>
+    <div class="brand">
+      <img class="brand-logo" src="assets/images/lineflow_logo.jpg" alt="LineFlow app icon">
+      <h1>Soida Games</h1>
+    </div>
     <p class="intro">Independent game development studio. This site hosts studio information, game pages, support links, and legal documents for app store review.</p>
   </header>
 
