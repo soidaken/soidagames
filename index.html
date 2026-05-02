@@ -90,6 +90,33 @@
       font-size: 14px;
     }
 
+    .language-switcher {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+      font-size: 12px;
+    }
+
+    .language-switcher button {
+      min-height: 28px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0 10px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.72);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .language-switcher button:hover,
+    .language-switcher button.is-active {
+      color: var(--accent-dark);
+      border-color: rgba(11, 122, 117, 0.35);
+      background: #e6f4f1;
+    }
+
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 290px;
@@ -378,6 +405,10 @@
         gap: 12px;
       }
 
+      .language-switcher {
+        justify-content: flex-start;
+      }
+
       .hero {
         padding-bottom: 36px;
         padding: 24px;
@@ -410,25 +441,36 @@
           <span class="studio-name">SoidaGames</span>
         </div>
         <div class="nav-links">
-          <a href="#games">Games</a>
+          <a href="#games" data-i18n="navGames">Games</a>
           <a href="#lineflow">LineFlow</a>
-          <a href="#studio">Studio</a>
-          <a href="#legal">Legal</a>
+          <a href="#studio" data-i18n="navStudio">Studio</a>
+          <a href="#legal" data-i18n="navLegal">Legal</a>
+        </div>
+        <div class="language-switcher" aria-label="Language selector">
+          <button type="button" data-lang="en" class="is-active">English</button>
+          <button type="button" data-lang="de">Deutsch</button>
+          <button type="button" data-lang="es">Español</button>
+          <button type="button" data-lang="it">Italiano</button>
+          <button type="button" data-lang="pt">Português</button>
+          <button type="button" data-lang="ja">日本語</button>
+          <button type="button" data-lang="ko">한국어</button>
+          <button type="button" data-lang="ru">Русский</button>
+          <button type="button" data-lang="tr">Türkçe</button>
         </div>
       </nav>
 
       <div class="hero">
         <div>
-          <h1>Small games, made with care.</h1>
-          <p class="intro">Soida Games is an independent game development studio focused on clean ideas, simple controls, and games that feel good to replay.</p>
+          <h1 data-i18n="heroTitle">Small games, made with care.</h1>
+          <p class="intro" data-i18n="heroIntro">We are an independent game development studio focused on clean ideas, simple controls, and games that feel good to replay.</p>
         </div>
 
         <aside class="app-card" aria-label="Featured game">
           <img class="app-icon" src="assets/images/lineflow_logo.jpg" alt="LineFlow app icon">
-          <span class="label">Featured game</span>
+          <span class="label" data-i18n="featuredLabel">Featured game</span>
           <h2>LineFlow</h2>
-          <p>A focused puzzle experience built around flow, timing, and small decisions.</p>
-          <a href="legal/privacy/lineflow.html">View privacy policy</a>
+          <p data-i18n="featuredCopy">A focused puzzle experience built around flow, timing, and small decisions.</p>
+          <a href="legal/privacy/lineflow.html" data-i18n="privacyLink">View privacy policy</a>
         </aside>
       </div>
 
@@ -437,19 +479,19 @@
     <main>
       <div class="grid">
         <section id="games">
-          <h2>Games</h2>
+          <h2 data-i18n="gamesTitle">Games</h2>
           <div class="game-row">
             <img src="assets/images/lineflow_logo.jpg" alt="LineFlow app icon">
             <div>
               <h3>LineFlow</h3>
-              <p class="muted">A casual puzzle game designed for short sessions, clear feedback, and steady challenge.</p>
+              <p class="muted" data-i18n="gameCopy">A casual puzzle game designed for short sessions, clear feedback, and steady challenge.</p>
             </div>
           </div>
         </section>
 
         <section id="studio">
-          <h2>Studio Notes</h2>
-          <p class="muted">Soida Games is run as a small independent studio. The goal is to make games that are easy to understand, respectful of the player's time, and polished enough to keep installed.</p>
+          <h2 data-i18n="studioTitle">Studio Notes</h2>
+          <p class="muted" data-i18n="studioCopy">Soida Games is run as a small independent studio. The goal is to make games that are easy to understand, respectful of the player's time, and polished enough to keep installed.</p>
         </section>
       </div>
 
@@ -459,10 +501,10 @@
             <img src="assets/images/lineflow_logo.jpg" alt="LineFlow app icon">
             <div>
               <h2>LineFlow</h2>
-              <span class="label">Puzzle game</span>
+              <span class="label" data-i18n="puzzleLabel">Puzzle game</span>
             </div>
           </div>
-          <p class="showcase-copy">Draw a clean path through soft puzzle boards, clear levels at your own pace, and come back for daily challenges and trophies.</p>
+          <p class="showcase-copy" data-i18n="showcaseCopy">Draw a clean path through soft puzzle boards, clear levels at your own pace, and come back for daily challenges and trophies.</p>
         </div>
 
         <div class="screenshots" aria-label="LineFlow screenshots">
@@ -475,20 +517,20 @@
 
       <div class="grid">
         <section id="legal">
-          <h2>Legal Documents</h2>
-          <p class="muted">Public policies and review materials for current games.</p>
+          <h2 data-i18n="legalTitle">Legal Documents</h2>
+          <p class="muted" data-i18n="legalCopy">Public policies and review materials for current games.</p>
           <ul class="links">
-            <li><a href="legal/privacy/lineflow.html">LineFlow Privacy Policy</a></li>
+            <li><a href="legal/privacy/lineflow.html" data-i18n="privacyPolicy">LineFlow Privacy Policy</a></li>
           </ul>
         </section>
 
         <section>
-          <h2>For Players</h2>
-          <p class="muted">If you need help with a game, privacy question, or store review request, use the support information listed with the game or store page.</p>
+          <h2 data-i18n="playersTitle">For Players</h2>
+          <p class="muted" data-i18n="playersCopy">If you need help with a game, privacy question, or store review request, use the support information listed with the game or store page.</p>
           <ul class="small-list">
-            <li>Game updates are kept small and practical.</li>
-            <li>Policy pages stay public for review access.</li>
-            <li>More game pages will be added over time.</li>
+            <li data-i18n="playerPoint1">Game updates are kept small and practical.</li>
+            <li data-i18n="playerPoint2">Policy pages stay public for review access.</li>
+            <li data-i18n="playerPoint3">More game pages will be added over time.</li>
           </ul>
         </section>
       </div>
@@ -496,7 +538,260 @@
   </div>
 
   <footer>
-    <p>&copy; 2026 Soida Games. Independent game development studio.</p>
+    <p data-i18n="footer">&copy; 2026 Soida Games. Independent game development studio.</p>
   </footer>
+  <script>
+    const translations = {
+      en: {
+        navGames: "Games",
+        navStudio: "Studio",
+        navLegal: "Legal",
+        heroTitle: "Small games, made with care.",
+        heroIntro: "We are an independent game development studio focused on clean ideas, simple controls, and games that feel good to replay.",
+        featuredLabel: "Featured game",
+        featuredCopy: "A focused puzzle experience built around flow, timing, and small decisions.",
+        privacyLink: "View privacy policy",
+        gamesTitle: "Games",
+        gameCopy: "A casual puzzle game designed for short sessions, clear feedback, and steady challenge.",
+        studioTitle: "Studio Notes",
+        studioCopy: "Soida Games is run as a small independent studio. The goal is to make games that are easy to understand, respectful of the player's time, and polished enough to keep installed.",
+        puzzleLabel: "Puzzle game",
+        showcaseCopy: "Draw a clean path through soft puzzle boards, clear levels at your own pace, and come back for daily challenges and trophies.",
+        legalTitle: "Legal Documents",
+        legalCopy: "Public policies and review materials for current games.",
+        privacyPolicy: "LineFlow Privacy Policy",
+        playersTitle: "For Players",
+        playersCopy: "If you need help with a game, privacy question, or store review request, use the support information listed with the game or store page.",
+        playerPoint1: "Game updates are kept small and practical.",
+        playerPoint2: "Policy pages stay public for review access.",
+        playerPoint3: "More game pages will be added over time.",
+        footer: "&copy; 2026 Soida Games. Independent game development studio."
+      },
+      de: {
+        navGames: "Spiele",
+        navStudio: "Studio",
+        navLegal: "Rechtliches",
+        heroTitle: "Kleine Spiele, mit Sorgfalt gemacht.",
+        heroIntro: "Wir sind ein unabhängiges Spielestudio für klare Ideen, einfache Steuerung und Spiele, die man gern wieder spielt.",
+        featuredLabel: "Ausgewähltes Spiel",
+        featuredCopy: "Ein fokussiertes Puzzle-Erlebnis rund um Flow, Timing und kleine Entscheidungen.",
+        privacyLink: "Datenschutzerklärung ansehen",
+        gamesTitle: "Spiele",
+        gameCopy: "Ein lockeres Puzzlespiel für kurze Runden, klares Feedback und stetige Herausforderung.",
+        studioTitle: "Studio-Notizen",
+        studioCopy: "Soida Games wird als kleines unabhängiges Studio geführt. Ziel sind Spiele, die leicht zu verstehen sind, die Zeit der Spieler respektieren und sauber ausgearbeitet sind.",
+        puzzleLabel: "Puzzlespiel",
+        showcaseCopy: "Zeichne einen klaren Pfad durch weiche Puzzlefelder, löse Level in deinem Tempo und kehre für tägliche Aufgaben und Trophäen zurück.",
+        legalTitle: "Rechtliche Dokumente",
+        legalCopy: "Öffentliche Richtlinien und Prüfmaterialien für aktuelle Spiele.",
+        privacyPolicy: "LineFlow Datenschutzerklärung",
+        playersTitle: "Für Spieler",
+        playersCopy: "Wenn du Hilfe, eine Datenschutzfrage oder eine Anfrage zur Store-Prüfung hast, nutze die Support-Informationen beim Spiel oder im Store.",
+        playerPoint1: "Updates bleiben klein und praktisch.",
+        playerPoint2: "Richtlinienseiten bleiben öffentlich erreichbar.",
+        playerPoint3: "Weitere Spielseiten werden später ergänzt.",
+        footer: "&copy; 2026 Soida Games. Unabhängiges Spielestudio."
+      },
+      es: {
+        navGames: "Juegos",
+        navStudio: "Estudio",
+        navLegal: "Legal",
+        heroTitle: "Juegos pequeños, hechos con cuidado.",
+        heroIntro: "Somos un estudio independiente centrado en ideas claras, controles simples y juegos que apetece volver a jugar.",
+        featuredLabel: "Juego destacado",
+        featuredCopy: "Una experiencia de puzles centrada en el flujo, el ritmo y pequeñas decisiones.",
+        privacyLink: "Ver política de privacidad",
+        gamesTitle: "Juegos",
+        gameCopy: "Un juego de puzles casual pensado para partidas cortas, respuesta clara y reto constante.",
+        studioTitle: "Notas del estudio",
+        studioCopy: "Soida Games funciona como un pequeño estudio independiente. El objetivo es crear juegos fáciles de entender, respetuosos con el tiempo del jugador y bien pulidos.",
+        puzzleLabel: "Juego de puzles",
+        showcaseCopy: "Dibuja un camino limpio por tableros suaves, supera niveles a tu ritmo y vuelve para desafíos diarios y trofeos.",
+        legalTitle: "Documentos legales",
+        legalCopy: "Políticas públicas y materiales de revisión para los juegos actuales.",
+        privacyPolicy: "Política de privacidad de LineFlow",
+        playersTitle: "Para jugadores",
+        playersCopy: "Si necesitas ayuda con un juego, una pregunta de privacidad o una revisión de tienda, usa la información de soporte indicada en el juego o en la tienda.",
+        playerPoint1: "Las actualizaciones son pequeñas y prácticas.",
+        playerPoint2: "Las páginas de políticas se mantienen públicas.",
+        playerPoint3: "Se añadirán más páginas de juegos con el tiempo.",
+        footer: "&copy; 2026 Soida Games. Estudio independiente de desarrollo de juegos."
+      },
+      it: {
+        navGames: "Giochi",
+        navStudio: "Studio",
+        navLegal: "Legale",
+        heroTitle: "Piccoli giochi, fatti con cura.",
+        heroIntro: "Siamo uno studio indipendente che punta su idee pulite, controlli semplici e giochi piacevoli da riprendere.",
+        featuredLabel: "Gioco in evidenza",
+        featuredCopy: "Un'esperienza puzzle concentrata su flusso, tempismo e piccole decisioni.",
+        privacyLink: "Vedi informativa privacy",
+        gamesTitle: "Giochi",
+        gameCopy: "Un puzzle casual pensato per sessioni brevi, feedback chiaro e una sfida costante.",
+        studioTitle: "Note dello studio",
+        studioCopy: "Soida Games è un piccolo studio indipendente. L'obiettivo è creare giochi facili da capire, rispettosi del tempo del giocatore e ben rifiniti.",
+        puzzleLabel: "Puzzle game",
+        showcaseCopy: "Disegna un percorso pulito su tavole morbide, supera i livelli al tuo ritmo e torna per sfide giornaliere e trofei.",
+        legalTitle: "Documenti legali",
+        legalCopy: "Policy pubbliche e materiali di revisione per i giochi attuali.",
+        privacyPolicy: "Informativa privacy di LineFlow",
+        playersTitle: "Per i giocatori",
+        playersCopy: "Se hai bisogno di aiuto, hai una domanda sulla privacy o una richiesta di revisione store, usa le informazioni di supporto indicate nel gioco o nello store.",
+        playerPoint1: "Gli aggiornamenti restano piccoli e pratici.",
+        playerPoint2: "Le pagine delle policy restano pubbliche.",
+        playerPoint3: "Altre pagine di giochi saranno aggiunte nel tempo.",
+        footer: "&copy; 2026 Soida Games. Studio indipendente di sviluppo giochi."
+      },
+      pt: {
+        navGames: "Jogos",
+        navStudio: "Estúdio",
+        navLegal: "Legal",
+        heroTitle: "Pequenos jogos, feitos com cuidado.",
+        heroIntro: "Somos um estúdio independente focado em ideias claras, controles simples e jogos bons de voltar a jogar.",
+        featuredLabel: "Jogo em destaque",
+        featuredCopy: "Uma experiência de quebra-cabeça focada em fluxo, ritmo e pequenas decisões.",
+        privacyLink: "Ver política de privacidade",
+        gamesTitle: "Jogos",
+        gameCopy: "Um quebra-cabeça casual feito para sessões curtas, feedback claro e desafio constante.",
+        studioTitle: "Notas do estúdio",
+        studioCopy: "Soida Games é um pequeno estúdio independente. A meta é criar jogos fáceis de entender, que respeitam o tempo do jogador e são bem polidos.",
+        puzzleLabel: "Jogo de puzzle",
+        showcaseCopy: "Desenhe um caminho limpo por tabuleiros suaves, complete fases no seu ritmo e volte para desafios diários e troféus.",
+        legalTitle: "Documentos legais",
+        legalCopy: "Políticas públicas e materiais de revisão dos jogos atuais.",
+        privacyPolicy: "Política de privacidade do LineFlow",
+        playersTitle: "Para jogadores",
+        playersCopy: "Se precisar de ajuda, tiver uma pergunta sobre privacidade ou uma solicitação de revisão da loja, use as informações de suporte no jogo ou na página da loja.",
+        playerPoint1: "As atualizações são pequenas e práticas.",
+        playerPoint2: "As páginas de política ficam públicas para acesso.",
+        playerPoint3: "Mais páginas de jogos serão adicionadas com o tempo.",
+        footer: "&copy; 2026 Soida Games. Estúdio independente de desenvolvimento de jogos."
+      },
+      ja: {
+        navGames: "ゲーム",
+        navStudio: "スタジオ",
+        navLegal: "法的情報",
+        heroTitle: "小さなゲームを、ていねいに。",
+        heroIntro: "私たちは、わかりやすいアイデア、シンプルな操作、また遊びたくなる手触りを大切にするインディーゲームスタジオです。",
+        featuredLabel: "注目のゲーム",
+        featuredCopy: "流れ、タイミング、小さな判断を楽しむ、集中しやすいパズル体験です。",
+        privacyLink: "プライバシーポリシーを見る",
+        gamesTitle: "ゲーム",
+        gameCopy: "短い時間で遊べて、反応がわかりやすく、少しずつ手ごたえが増すカジュアルパズルです。",
+        studioTitle: "スタジオについて",
+        studioCopy: "Soida Games は小さなインディーゲームスタジオです。わかりやすく、プレイヤーの時間を大切にし、きちんと磨いたゲーム作りを目指しています。",
+        puzzleLabel: "パズルゲーム",
+        showcaseCopy: "やわらかい盤面にきれいな道を描き、自分のペースでレベルを進め、デイリーチャレンジやトロフィーにも挑戦できます。",
+        legalTitle: "法的ドキュメント",
+        legalCopy: "現在のゲームに関する公開ポリシーと審査用資料です。",
+        privacyPolicy: "LineFlow プライバシーポリシー",
+        playersTitle: "プレイヤーの方へ",
+        playersCopy: "ゲームのサポート、プライバシーに関する質問、ストア審査に関する連絡は、ゲームまたはストアページのサポート情報をご利用ください。",
+        playerPoint1: "アップデートは小さく実用的に行います。",
+        playerPoint2: "ポリシーページは公開状態を保ちます。",
+        playerPoint3: "ゲームページは今後追加していきます。",
+        footer: "&copy; 2026 Soida Games. インディーゲーム開発スタジオ。"
+      },
+      ko: {
+        navGames: "게임",
+        navStudio: "스튜디오",
+        navLegal: "법적 정보",
+        heroTitle: "작은 게임을 정성스럽게 만듭니다.",
+        heroIntro: "우리는 명확한 아이디어, 쉬운 조작, 다시 플레이하고 싶은 느낌을 중요하게 생각하는 인디 게임 스튜디오입니다.",
+        featuredLabel: "대표 게임",
+        featuredCopy: "흐름, 타이밍, 작은 선택을 중심으로 만든 집중형 퍼즐 경험입니다.",
+        privacyLink: "개인정보 처리방침 보기",
+        gamesTitle: "게임",
+        gameCopy: "짧게 즐기기 좋고, 피드백이 분명하며, 꾸준한 도전을 주는 캐주얼 퍼즐 게임입니다.",
+        studioTitle: "스튜디오 노트",
+        studioCopy: "Soida Games는 작은 인디 스튜디오입니다. 이해하기 쉽고, 플레이어의 시간을 존중하며, 충분히 다듬어진 게임을 만드는 것이 목표입니다.",
+        puzzleLabel: "퍼즐 게임",
+        showcaseCopy: "부드러운 퍼즐 보드에 깔끔한 길을 그리고, 자신의 속도로 레벨을 클리어하며, 데일리 챌린지와 트로피에 다시 도전하세요.",
+        legalTitle: "법적 문서",
+        legalCopy: "현재 게임을 위한 공개 정책과 심사 자료입니다.",
+        privacyPolicy: "LineFlow 개인정보 처리방침",
+        playersTitle: "플레이어 안내",
+        playersCopy: "게임 지원, 개인정보 관련 질문, 스토어 심사 요청은 게임 또는 스토어 페이지에 표시된 지원 정보를 이용해 주세요.",
+        playerPoint1: "업데이트는 작고 실용적으로 유지합니다.",
+        playerPoint2: "정책 페이지는 공개 상태로 유지됩니다.",
+        playerPoint3: "더 많은 게임 페이지가 앞으로 추가됩니다.",
+        footer: "&copy; 2026 Soida Games. 인디 게임 개발 스튜디오."
+      },
+      ru: {
+        navGames: "Игры",
+        navStudio: "Студия",
+        navLegal: "Правовая информация",
+        heroTitle: "Небольшие игры, сделанные с заботой.",
+        heroIntro: "Мы независимая студия, которая делает игры с понятными идеями, простым управлением и приятным повторным прохождением.",
+        featuredLabel: "Избранная игра",
+        featuredCopy: "Сфокусированная головоломка о потоке, тайминге и небольших решениях.",
+        privacyLink: "Открыть политику конфиденциальности",
+        gamesTitle: "Игры",
+        gameCopy: "Казуальная головоломка для коротких сессий, понятной обратной связи и стабильного вызова.",
+        studioTitle: "О студии",
+        studioCopy: "Soida Games — небольшая независимая студия. Цель — делать игры, которые легко понять, которые уважают время игрока и достаточно хорошо отполированы.",
+        puzzleLabel: "Головоломка",
+        showcaseCopy: "Проведите чистый путь через мягкие игровые поля, проходите уровни в своем темпе и возвращайтесь за ежедневными заданиями и трофеями.",
+        legalTitle: "Правовые документы",
+        legalCopy: "Публичные политики и материалы для проверки текущих игр.",
+        privacyPolicy: "Политика конфиденциальности LineFlow",
+        playersTitle: "Для игроков",
+        playersCopy: "Если нужна помощь по игре, есть вопрос о конфиденциальности или запрос для проверки магазина, используйте поддержку, указанную в игре или на странице магазина.",
+        playerPoint1: "Обновления остаются небольшими и практичными.",
+        playerPoint2: "Страницы политик остаются публично доступными.",
+        playerPoint3: "Со временем появятся новые страницы игр.",
+        footer: "&copy; 2026 Soida Games. Независимая студия разработки игр."
+      },
+      tr: {
+        navGames: "Oyunlar",
+        navStudio: "Stüdyo",
+        navLegal: "Yasal",
+        heroTitle: "Küçük oyunlar, özenle yapılır.",
+        heroIntro: "Temiz fikirlere, basit kontrollere ve tekrar oynaması keyifli oyunlara odaklanan bağımsız bir oyun stüdyosuyuz.",
+        featuredLabel: "Öne çıkan oyun",
+        featuredCopy: "Akış, zamanlama ve küçük kararlar üzerine kurulu odaklı bir bulmaca deneyimi.",
+        privacyLink: "Gizlilik politikasını görüntüle",
+        gamesTitle: "Oyunlar",
+        gameCopy: "Kısa oturumlar, net geri bildirim ve düzenli meydan okuma için tasarlanmış rahat bir bulmaca oyunu.",
+        studioTitle: "Stüdyo Notları",
+        studioCopy: "Soida Games küçük bir bağımsız stüdyo olarak çalışır. Amaç; anlaşılması kolay, oyuncunun zamanına saygılı ve yeterince cilalı oyunlar yapmaktır.",
+        puzzleLabel: "Bulmaca oyunu",
+        showcaseCopy: "Yumuşak bulmaca tahtalarında temiz bir yol çiz, seviyeleri kendi hızında tamamla ve günlük görevler ile kupalar için geri dön.",
+        legalTitle: "Yasal Belgeler",
+        legalCopy: "Mevcut oyunlar için herkese açık politikalar ve inceleme materyalleri.",
+        privacyPolicy: "LineFlow Gizlilik Politikası",
+        playersTitle: "Oyuncular İçin",
+        playersCopy: "Oyun desteği, gizlilik sorusu veya mağaza inceleme isteği için oyunda ya da mağaza sayfasında listelenen destek bilgilerini kullanın.",
+        playerPoint1: "Oyun güncellemeleri küçük ve pratik tutulur.",
+        playerPoint2: "Politika sayfaları inceleme için herkese açık kalır.",
+        playerPoint3: "Zamanla daha fazla oyun sayfası eklenecek.",
+        footer: "&copy; 2026 Soida Games. Bağımsız oyun geliştirme stüdyosu."
+      }
+    };
+
+    const languageButtons = document.querySelectorAll("[data-lang]");
+    const translatableNodes = document.querySelectorAll("[data-i18n]");
+
+    function setLanguage(language) {
+      const dictionary = translations[language] || translations.en;
+      document.documentElement.lang = language;
+      translatableNodes.forEach((node) => {
+        const key = node.dataset.i18n;
+        if (dictionary[key]) {
+          node.innerHTML = dictionary[key];
+        }
+      });
+      languageButtons.forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.lang === language);
+      });
+      localStorage.setItem("soidagames-language", language);
+    }
+
+    languageButtons.forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.lang));
+    });
+
+    setLanguage(localStorage.getItem("soidagames-language") || "en");
+  </script>
 </body>
 </html>
