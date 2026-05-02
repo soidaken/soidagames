@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LineFlow Feedback - Soida Games</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #18202b;
+      --muted: #667085;
+      --line: #d5dde7;
+      --paper: #fbfaf7;
+      --panel: #ffffff;
+      --accent: #586bff;
+      --accent-dark: #31408f;
+      --soft: #eef1ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    main {
+      width: min(760px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 42px 0 56px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .brand img {
+      width: 62px;
+      height: 62px;
+      border-radius: 15px;
+      object-fit: cover;
+      box-shadow: 0 10px 24px rgba(24, 32, 43, 0.15);
+    }
+
+    .brand-name {
+      margin: 0;
+      font-size: 17px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(34px, 7vw, 56px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .intro {
+      max-width: 620px;
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    form {
+      display: grid;
+      gap: 18px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: 0 16px 36px rgba(24, 32, 43, 0.08);
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      font-weight: 700;
+    }
+
+    span {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 13px 14px;
+      color: var(--ink);
+      font: inherit;
+      background: #ffffff;
+    }
+
+    textarea {
+      min-height: 180px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: 3px solid var(--soft);
+      border-color: var(--accent);
+    }
+
+    button {
+      width: fit-content;
+      min-height: 46px;
+      border: 0;
+      border-radius: 999px;
+      padding: 0 22px;
+      color: #ffffff;
+      background: var(--accent);
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: var(--accent-dark);
+    }
+
+    .note {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .back {
+      display: inline-flex;
+      margin-top: 24px;
+      color: var(--accent-dark);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .back:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand">
+      <img src="../assets/images/lineflow_logo.jpg" alt="LineFlow app icon">
+      <p class="brand-name">LineFlow by Soida Games</p>
+    </div>
+
+    <h1>Write Us</h1>
+    <p class="intro">Tell us what happened, what you liked, or what could be better. Your message will be sent by email.</p>
+
+    <form id="feedback-form">
+      <label>
+        Your email
+        <span>Optional, but useful if you want a reply.</span>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+      </label>
+
+      <label>
+        Feedback
+        <span>Please write your message here.</span>
+        <textarea id="message" name="message" required placeholder="I want to share..."></textarea>
+      </label>
+
+      <button type="submit">Send feedback</button>
+    </form>
+
+    <p class="note">This page does not upload images or collect files. It only prepares an email with the text you enter.</p>
+    <a class="back" href="../index.html">Back to Soida Games</a>
+  </main>
+
+  <script>
+    const form = document.getElementById('feedback-form');
+    const email = document.getElementById('email');
+    const message = document.getElementById('message');
+    const supportEmail = 'adioskensunny@gmail.com';
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const userEmail = email.value.trim() || 'Not provided';
+      const userMessage = message.value.trim();
+
+      if (!userMessage) {
+        message.focus();
+        return;
+      }
+
+      const subject = encodeURIComponent('LineFlow Feedback');
+      const body = encodeURIComponent(
+        `User email: ${userEmail}\n\nFeedback:\n${userMessage}`
+      );
+
+      window.location.href = `mailto:${supportEmail}?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
