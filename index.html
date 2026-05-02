@@ -94,7 +94,13 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      justify-content: flex-end;
+      position: fixed;
+      top: 50%;
+      right: 18px;
+      z-index: 20;
+      width: 118px;
+      justify-content: flex-start;
+      transform: translateY(-50%);
       font-size: 12px;
     }
 
@@ -406,7 +412,12 @@
       }
 
       .language-switcher {
-        justify-content: flex-start;
+        top: auto;
+        right: 12px;
+        bottom: 18px;
+        width: min(280px, calc(100% - 24px));
+        justify-content: flex-end;
+        transform: none;
       }
 
       .hero {
@@ -446,18 +457,19 @@
           <a href="#studio" data-i18n="navStudio">Studio</a>
           <a href="#legal" data-i18n="navLegal">Legal</a>
         </div>
-        <div class="language-switcher" aria-label="Language selector">
-          <button type="button" data-lang="en" class="is-active">English</button>
-          <button type="button" data-lang="de">Deutsch</button>
-          <button type="button" data-lang="es">Español</button>
-          <button type="button" data-lang="it">Italiano</button>
-          <button type="button" data-lang="pt">Português</button>
-          <button type="button" data-lang="ja">日本語</button>
-          <button type="button" data-lang="ko">한국어</button>
-          <button type="button" data-lang="ru">Русский</button>
-          <button type="button" data-lang="tr">Türkçe</button>
-        </div>
       </nav>
+
+      <div class="language-switcher" aria-label="Language selector">
+        <button type="button" data-lang="en" class="is-active">English</button>
+        <button type="button" data-lang="de">Deutsch</button>
+        <button type="button" data-lang="es">Español</button>
+        <button type="button" data-lang="it">Italiano</button>
+        <button type="button" data-lang="pt">Português</button>
+        <button type="button" data-lang="ja">日本語</button>
+        <button type="button" data-lang="ko">한국어</button>
+        <button type="button" data-lang="ru">Русский</button>
+        <button type="button" data-lang="tr">Türkçe</button>
+      </div>
 
       <div class="hero">
         <div>
