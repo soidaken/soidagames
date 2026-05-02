@@ -63,19 +63,24 @@
     .studio-mark {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       color: var(--ink);
       font-weight: 800;
       letter-spacing: 0;
     }
 
-    .studio-dot {
-      width: 14px;
-      height: 14px;
-      border: 3px solid var(--accent);
-      border-radius: 50%;
-      background: var(--warm);
-      box-shadow: 6px 0 0 rgba(11, 122, 117, 0.2);
+    .studio-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 8px 18px rgba(24, 32, 43, 0.12);
+    }
+
+    .studio-name {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
     }
 
     .nav-links {
@@ -401,8 +406,8 @@
     <header>
       <nav class="nav" aria-label="Main navigation">
         <div class="studio-mark">
-          <span class="studio-dot" aria-hidden="true"></span>
-          <span>Soida Games</span>
+          <img class="studio-logo" src="assets/images/soidagameslogo.jpg" alt="SoidaGames logo">
+          <span class="studio-name">SoidaGames</span>
         </div>
         <div class="nav-links">
           <a href="#games">Games</a>
