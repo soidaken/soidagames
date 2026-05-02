@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soida Games</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #18212f;
+      --muted: #5f6c7b;
+      --line: #d9e2ec;
+      --accent: #0f766e;
+      --bg: #f8fafc;
+      --panel: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    header,
+    main,
+    footer {
+      width: min(920px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 56px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(34px, 7vw, 64px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .intro {
+      max-width: 680px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    main {
+      padding: 32px 0 48px;
+      display: grid;
+      gap: 24px;
+    }
+
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .links {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    footer {
+      padding: 0 0 32px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Soida Games</h1>
+    <p class="intro">Independent game development studio. This site hosts studio information, game pages, support links, and legal documents for app store review.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Games</h2>
+      <p>Current public review documents are available for LineFlow.</p>
+    </section>
+
+    <section>
+      <h2>Legal Documents</h2>
+      <ul class="links">
+        <li><a href="legal/privacy/lineflow.html">LineFlow Privacy Policy</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>For support, privacy, or store review questions, please contact the developer through the support information listed in each game or store page.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Soida Games. All rights reserved.</p>
+  </footer>
+</body>
+</html>
