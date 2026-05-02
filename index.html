@@ -217,6 +217,57 @@
       line-height: 1.25;
     }
 
+    .showcase {
+      display: grid;
+      gap: 22px;
+    }
+
+    .showcase-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .showcase-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .showcase-title img {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      object-fit: cover;
+      box-shadow: 0 8px 18px rgba(24, 32, 43, 0.14);
+    }
+
+    .showcase-title h2 {
+      margin-bottom: 4px;
+    }
+
+    .showcase-copy {
+      max-width: 470px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .screenshots {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .screenshot {
+      display: block;
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 14px 32px rgba(24, 32, 43, 0.10);
+    }
+
     .links {
       display: grid;
       gap: 10px;
@@ -253,6 +304,24 @@
 
       .hero {
         gap: 28px;
+      }
+
+      .showcase-head {
+        display: grid;
+      }
+
+      .screenshots {
+        display: flex;
+        gap: 14px;
+        margin: 0 -20px;
+        padding: 2px 20px 8px;
+        overflow-x: auto;
+        scroll-snap-type: x proximity;
+      }
+
+      .screenshot {
+        flex: 0 0 230px;
+        scroll-snap-align: start;
       }
 
       .app-card {
@@ -293,6 +362,10 @@
       .app-card {
         padding: 20px;
       }
+
+      .screenshots {
+        margin: 0 -20px;
+      }
     }
   </style>
 </head>
@@ -306,6 +379,7 @@
         </div>
         <div class="nav-links">
           <a href="#games">Games</a>
+          <a href="#lineflow">LineFlow</a>
           <a href="#studio">Studio</a>
           <a href="#legal">Legal</a>
         </div>
@@ -346,6 +420,26 @@
           <p class="muted">Soida Games is run as a small independent studio. The goal is to make games that are easy to understand, respectful of the player's time, and polished enough to keep installed.</p>
         </section>
       </div>
+
+      <section id="lineflow" class="showcase">
+        <div class="showcase-head">
+          <div class="showcase-title">
+            <img src="assets/images/lineflow_logo.jpg" alt="LineFlow app icon">
+            <div>
+              <h2>LineFlow</h2>
+              <span class="label">Puzzle game</span>
+            </div>
+          </div>
+          <p class="showcase-copy">Draw a clean path through soft puzzle boards, clear levels at your own pace, and come back for daily challenges and trophies.</p>
+        </div>
+
+        <div class="screenshots" aria-label="LineFlow screenshots">
+          <img class="screenshot" src="assets/store-screenshots/phone/lineflow-phone-01-gameplay.png" alt="LineFlow gameplay screen with a connected path puzzle">
+          <img class="screenshot" src="assets/store-screenshots/phone/lineflow-phone-02-home.png" alt="LineFlow home screen with a continue button">
+          <img class="screenshot" src="assets/store-screenshots/phone/lineflow-phone-03-daily.png" alt="LineFlow daily challenge calendar screen">
+          <img class="screenshot" src="assets/store-screenshots/phone/lineflow-phone-04-trophy.png" alt="LineFlow trophy achievement screen">
+        </div>
+      </section>
 
       <div class="grid">
         <section id="legal">
