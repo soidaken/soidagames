@@ -784,9 +784,45 @@
     const languageButtons = document.querySelectorAll("[data-lang]");
     const translatableNodes = document.querySelectorAll("[data-i18n]");
 
-    function setLanguage(language) {
-      const dictionary = translations[language] || translations.en;
-      document.documentElement.lang = language;
+    function normalizeLanguage(language) {
+      if (!language) {
+        return "";
+      }
+
+      const normalized = language.toLowerCase().replace("_", "-");
+      if (translations[normalized]) {
+        return normalized;
+      }
+
+      const baseLanguage = normalized.split("-")[0];
+      return translations[baseLanguage] ? baseLanguage : "";
+    }
+
+    function detectLanguage() {
+      const savedLanguage = localStorage.getItem("soidagames-language");
+      const savedMatch = normalizeLanguage(savedLanguage);
+      if (savedMatch) {
+        return savedMatch;
+      }
+
+      const browserLanguages = navigator.languages && navigator.languages.length
+        ? navigator.languages
+        : [navigator.language];
+
+      for (const language of browserLanguages) {
+        const match = normalizeLanguage(language);
+        if (match) {
+          return match;
+        }
+      }
+
+      return "en";
+    }
+
+    function setLanguage(language, shouldSave = true) {
+      const activeLanguage = normalizeLanguage(language) || "en";
+      const dictionary = translations[activeLanguage] || translations.en;
+      document.documentElement.lang = activeLanguage;
       translatableNodes.forEach((node) => {
         const key = node.dataset.i18n;
         if (dictionary[key]) {
@@ -794,16 +830,18 @@
         }
       });
       languageButtons.forEach((button) => {
-        button.classList.toggle("is-active", button.dataset.lang === language);
+        button.classList.toggle("is-active", button.dataset.lang === activeLanguage);
       });
-      localStorage.setItem("soidagames-language", language);
+      if (shouldSave) {
+        localStorage.setItem("soidagames-language", activeLanguage);
+      }
     }
 
     languageButtons.forEach((button) => {
       button.addEventListener("click", () => setLanguage(button.dataset.lang));
     });
 
-    setLanguage(localStorage.getItem("soidagames-language") || "en");
+    setLanguage(detectLanguage(), Boolean(localStorage.getItem("soidagames-language")));
   </script>
 </body>
 </html>
