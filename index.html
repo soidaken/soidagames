@@ -465,6 +465,8 @@
         <button type="button" data-lang="es">Español</button>
         <button type="button" data-lang="it">Italiano</button>
         <button type="button" data-lang="pt">Português</button>
+        <button type="button" data-lang="zh-CN">简体中文</button>
+        <button type="button" data-lang="zh-TW">繁體中文</button>
         <button type="button" data-lang="ja">日本語</button>
         <button type="button" data-lang="ko">한국어</button>
         <button type="button" data-lang="ru">Русский</button>
@@ -679,6 +681,56 @@
         playerPoint3: "Mais páginas de jogos serão adicionadas com o tempo.",
         footer: "&copy; 2026 Soida Games. Estúdio independente de desenvolvimento de jogos."
       },
+      "zh-CN": {
+        navGames: "游戏",
+        navStudio: "工作室",
+        navLegal: "法律信息",
+        heroTitle: "用心做好小游戏。",
+        heroIntro: "我们是一家独立游戏开发工作室，专注于清晰的玩法想法、简单的操作，以及值得反复游玩的游戏体验。",
+        featuredLabel: "主推游戏",
+        featuredCopy: "一款围绕路径、节奏和小决策设计的专注型益智游戏。",
+        privacyLink: "查看隐私政策",
+        gamesTitle: "游戏",
+        gameCopy: "一款适合短时间游玩的休闲益智游戏，反馈清晰，挑战循序渐进。",
+        studioTitle: "工作室说明",
+        studioCopy: "Soida Games 是一个小型独立游戏工作室。我们的目标是做容易理解、尊重玩家时间、并且足够打磨的游戏。",
+        puzzleLabel: "益智游戏",
+        showcaseCopy: "在柔和的棋盘上画出清晰路径，按自己的节奏通关，并回到游戏中挑战每日关卡和奖杯。",
+        legalTitle: "法律文件",
+        legalCopy: "当前游戏的公开政策和审核资料。",
+        privacyPolicy: "LineFlow 隐私政策",
+        playersTitle: "玩家支持",
+        playersCopy: "如果你需要游戏帮助、有隐私问题，或有商店审核相关需求，请使用游戏或商店页面中列出的支持信息。",
+        playerPoint1: "游戏更新会保持小而实用。",
+        playerPoint2: "政策页面会保持公开，方便审核访问。",
+        playerPoint3: "后续会逐步加入更多游戏页面。",
+        footer: "&copy; 2026 Soida Games. 独立游戏开发工作室。"
+      },
+      "zh-TW": {
+        navGames: "遊戲",
+        navStudio: "工作室",
+        navLegal: "法律資訊",
+        heroTitle: "用心做好小遊戲。",
+        heroIntro: "我們是一家獨立遊戲開發工作室，專注於清楚的玩法想法、簡單的操作，以及值得反覆遊玩的遊戲體驗。",
+        featuredLabel: "主打遊戲",
+        featuredCopy: "一款圍繞路徑、節奏和小決策設計的專注型益智遊戲。",
+        privacyLink: "查看隱私權政策",
+        gamesTitle: "遊戲",
+        gameCopy: "一款適合短時間遊玩的休閒益智遊戲，回饋清楚，挑戰循序漸進。",
+        studioTitle: "工作室說明",
+        studioCopy: "Soida Games 是一個小型獨立遊戲工作室。我們的目標是做容易理解、尊重玩家時間，並且足夠打磨的遊戲。",
+        puzzleLabel: "益智遊戲",
+        showcaseCopy: "在柔和的棋盤上畫出清楚路徑，依照自己的節奏通關，並回到遊戲中挑戰每日關卡和獎盃。",
+        legalTitle: "法律文件",
+        legalCopy: "目前遊戲的公開政策和審核資料。",
+        privacyPolicy: "LineFlow 隱私權政策",
+        playersTitle: "玩家支援",
+        playersCopy: "如果你需要遊戲協助、有隱私問題，或有商店審核相關需求，請使用遊戲或商店頁面中列出的支援資訊。",
+        playerPoint1: "遊戲更新會保持小而實用。",
+        playerPoint2: "政策頁面會保持公開，方便審核存取。",
+        playerPoint3: "後續會逐步加入更多遊戲頁面。",
+        footer: "&copy; 2026 Soida Games. 獨立遊戲開發工作室。"
+      },
       ja: {
         navGames: "ゲーム",
         navStudio: "スタジオ",
@@ -790,6 +842,12 @@
       }
 
       const normalized = language.toLowerCase().replace("_", "-");
+      if (normalized === "zh" || normalized === "zh-cn" || normalized === "zh-sg" || normalized === "zh-hans") {
+        return "zh-CN";
+      }
+      if (normalized === "zh-tw" || normalized === "zh-hk" || normalized === "zh-mo" || normalized === "zh-hant") {
+        return "zh-TW";
+      }
       if (translations[normalized]) {
         return normalized;
       }
