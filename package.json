@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "code": "^5.2.4",
+    "reasonix": "^0.53.2"
+  }
+}
