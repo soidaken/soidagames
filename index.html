@@ -485,7 +485,7 @@
           <span class="label" data-i18n="featuredLabel">Featured game</span>
           <h2>LineFlow</h2>
           <p data-i18n="featuredCopy">A focused puzzle experience built around flow, timing, and small decisions.</p>
-          <a href="legal/privacy/lineflow.html" data-i18n="privacyLink">View privacy policy</a>
+          <a href="legal/privacy/lineflow.html" id="privacy-link-1" data-i18n="privacyLink">View privacy policy</a>
         </aside>
       </div>
 
@@ -535,7 +535,7 @@
           <h2 data-i18n="legalTitle">Legal Documents</h2>
           <p class="muted" data-i18n="legalCopy">Public policies and review materials for current games.</p>
           <ul class="links">
-            <li><a href="legal/privacy/lineflow.html" data-i18n="privacyPolicy">LineFlow Privacy Policy</a></li>
+            <li><a href="legal/privacy/lineflow.html" id="privacy-link-2" data-i18n="privacyPolicy">LineFlow Privacy Policy</a></li>
           </ul>
         </section>
 
@@ -916,6 +916,13 @@
       languageButtons.forEach((button) => {
         button.classList.toggle("is-active", button.dataset.lang === activeLanguage);
       });
+
+      const link1 = document.getElementById("privacy-link-1");
+      const link2 = document.getElementById("privacy-link-2");
+      const suffix = activeLanguage === "en" ? "" : "?lang=" + activeLanguage;
+      if (link1) link1.href = "legal/privacy/lineflow.html" + suffix;
+      if (link2) link2.href = "legal/privacy/lineflow.html" + suffix;
+
       if (shouldSave) {
         localStorage.setItem("soidagames-language", activeLanguage);
       }
