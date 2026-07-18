@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>PhotoInOut Privacy Policy</title>
+  <style>
+    :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; }
+    body { margin: 0 auto; max-width: 760px; padding: 28px 22px 48px; color: CanvasText; background: Canvas; line-height: 1.62; }
+    h1 { font-size: 30px; line-height: 1.2; margin: 4px 0 8px; }
+    h2 { font-size: 19px; margin: 28px 0 8px; }
+    p, li { font-size: 16px; }
+    .meta { color: GrayText; margin-bottom: 28px; }
+    .summary { padding: 16px; border-radius: 14px; background: rgba(0, 122, 255, 0.10); }
+    a { color: LinkText; }
+    [data-lang] { display: none; }
+    html.zh [data-lang="zh"], html.en [data-lang="en"] { display: block; }
+  </style>
+  <script>
+    document.documentElement.className = ((navigator.language || '').toLowerCase().startsWith('zh')) ? 'zh' : 'en';
+    document.documentElement.lang = document.documentElement.className === 'zh' ? 'zh-Hans' : 'en';
+  </script>
+</head>
+<body>
+  <article data-lang="zh">
+    <h1>PhotoInOut 隐私政策</h1>
+    <p class="meta">生效日期：2026 年 7 月 18 日</p>
+    <p class="summary">PhotoInOut 在设备本地完成照片、Live Photo 和视频的导入导出。我们不运营服务器，不包含广告、跟踪或第三方分析 SDK，也不会自动上传你的媒体文件或使用情况。</p>
+
+    <h2>1. 照片与视频</h2>
+    <p>只有在你主动选择后，PhotoInOut 才会读取相册中的本机照片、Live Photo 和视频，以将原始资源导出到你选择的外部存储目录。应用不会主动从 iCloud 下载资源。导入时，只有你选择的文件会被写入系统相册。</p>
+
+    <h2>2. 外部存储与重复检测</h2>
+    <p>文件会直接保存到你选择的目录。为了识别重复导出，PhotoInOut 可能在该目录创建隐藏文件 <code>.photoinout-manifest.json</code>，其中包含相册资源标识、导出文件名、文件大小和 MD5 内容摘要。这些数据仅保存在你选择的外部存储中，不会传输给我们。你可以删除该清单；删除后只会失去快速重复识别记录。</p>
+
+    <h2>3. 临时文件</h2>
+    <p>导出和内容比对期间，应用可能在目标目录创建临时文件。任务完成、取消或失败后，应用会尽力删除未完成的临时文件。已成功导出的媒体由你自行管理。</p>
+
+    <h2>4. 反馈邮件</h2>
+    <p>当你主动选择“发送反馈”时，应用会打开系统邮件编辑器，并预填客服地址、App 版本和 iOS 版本。邮件内容只有在你确认发送后，才会通过你所使用的邮件服务提供商发送给我们。我们仅使用反馈信息来回复问题和改进产品，并会在不再需要时合理删除。</p>
+
+    <h2>5. 数据收集与共享</h2>
+    <p>除你主动发送的反馈邮件外，我们不收集、出售或与第三方共享个人数据。PhotoInOut 不要求账户，不使用广告标识符，也不进行跨 App 跟踪。</p>
+
+    <h2>6. 权限与你的选择</h2>
+    <p>你可以在 iOS“设置”中修改或撤销照片权限。你可以随时删除导出的文件、隐藏清单和反馈邮件。撤销权限后，相关导入或导出功能可能无法使用。</p>
+
+    <h2>7. 儿童隐私</h2>
+    <p>PhotoInOut 不会有意收集儿童的个人信息，应用的数据处理方式对所有用户相同。</p>
+
+    <h2>8. 政策更新</h2>
+    <p>如果功能或数据处理方式发生变化，我们会更新本政策和生效日期。重大变化会在应用更新说明或应用内提供提示。</p>
+
+    <h2>9. 联系我们</h2>
+    <p>如有隐私或支持问题，请联系：<a href="mailto:soida@qq.com">soida@qq.com</a></p>
+  </article>
+
+  <article data-lang="en">
+    <h1>PhotoInOut Privacy Policy</h1>
+    <p class="meta">Effective date: July 18, 2026</p>
+    <p class="summary">PhotoInOut imports and exports photos, Live Photos, and videos locally on your device. We do not operate a server, include advertising, tracking, or third-party analytics SDKs, or automatically upload your media or usage information.</p>
+
+    <h2>1. Photos and Videos</h2>
+    <p>PhotoInOut reads only the local photos, Live Photos, and videos you actively select so their original resources can be exported to an external-storage folder you choose. The app does not initiate downloads from iCloud. When importing, only files you select are added to your photo library.</p>
+
+    <h2>2. External Storage and Duplicate Detection</h2>
+    <p>Files are saved directly to the folder you choose. To detect repeated exports, PhotoInOut may create a hidden <code>.photoinout-manifest.json</code> file in that folder. It contains photo-library resource identifiers, exported filenames, file sizes, and MD5 content digests. This information remains on the external storage you selected and is never transmitted to us. You may delete the manifest; doing so only removes the fast duplicate-detection history.</p>
+
+    <h2>3. Temporary Files</h2>
+    <p>The app may create temporary files in the destination folder while exporting or comparing content. It attempts to remove incomplete temporary files when an operation finishes, is cancelled, or fails. You control successfully exported media.</p>
+
+    <h2>4. Feedback Email</h2>
+    <p>When you choose Send Feedback, the app opens the system mail composer and prefills our support address, the app version, and the iOS version. The message is sent through your email provider only after you confirm. We use feedback solely to respond and improve the product, and retain it only as reasonably necessary.</p>
+
+    <h2>5. Data Collection and Sharing</h2>
+    <p>Except for feedback you voluntarily email, we do not collect, sell, or share personal data. PhotoInOut requires no account, uses no advertising identifier, and performs no cross-app tracking.</p>
+
+    <h2>6. Permissions and Your Choices</h2>
+    <p>You can change or revoke Photos access in iOS Settings. You may delete exported files, the hidden manifest, and sent feedback emails at any time. Revoking permission may prevent the related import or export feature from working.</p>
+
+    <h2>7. Children's Privacy</h2>
+    <p>PhotoInOut does not knowingly collect personal information from children. Its data practices are the same for all users.</p>
+
+    <h2>8. Changes to This Policy</h2>
+    <p>If our features or data practices change, we will update this policy and its effective date. Material changes may also be described in release notes or communicated in the app.</p>
+
+    <h2>9. Contact Us</h2>
+    <p>For privacy or support questions, contact <a href="mailto:soida@qq.com">soida@qq.com</a>.</p>
+  </article>
+</body>
+</html>
